@@ -1,10 +1,9 @@
 import {combineReducers} from 'redux';
-import token from './auth.js';
-import profile from './profile.js';
+import switchboard from './switchboard.js';
+
 
 
 
 module.exports = combineReducers({
-  token,
-  profile
+  switchboard
 });

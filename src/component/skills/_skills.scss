@@ -1,0 +1,155 @@
+@import '../../style/lib/vars.scss';
+
+
+#skills {
+  background: $black;
+  width: 100%;
+  height: 100vh;
+
+  &>div {
+    float: left;
+    width: 25%;
+    height: 100vh;
+    ul {
+      width: 100%;
+      height: 100vh;
+      float: left;
+
+      @for $i from 1 to 4 {
+
+        &>:nth-child(#{$i}) {
+          width: 20vh;
+        	height: 20vh;
+        	background: $secondary;
+        	position: relative;
+          transform: rotate(45deg);
+          margin-top: 10vh;
+          margin-left: 15%;
+          opacity: 1;
+          transition: 500ms all;
+          transition-delay: 500ms * $i;
+
+          div {
+            width: 18vh;
+            height: 18vh;
+            background: $primary;
+            float: left;
+            margin: 1vh;
+
+          }
+
+          p {
+            transform: rotate(-45deg);
+            font-size: 3.5vh;
+            font-family: $font2;
+            width: 100%;
+            margin-top: 7vh;
+            text-align: center;
+          }
+        }
+        .hidden {
+          opacity: 0;
+          height: 0;
+          width: 0;
+        }
+      }
+    }
+  }
+
+  &>section {
+    float: left;
+    width: 75%;
+    height: 100vh;
+
+    &>p {
+      width: 90%;
+      float: left;
+      height: 7vh;
+      font-size: 7vh;
+      color: $primary;
+      font-family: $font2;
+      margin: 2vh 0;
+    }
+
+    section {
+      float: left;
+      height: 85vh;
+      padding: 1vh 0;
+      width: 65%;
+
+      p:first-child {
+        width: 100%;
+        height: 5vh;
+        font-size: 5vh;
+        font-family: $font;
+        color: $primary;
+        text-align: center;;
+        font-weight: bold;
+      }
+
+      div {
+        width: 90%;
+        height: 0.5vh;
+        float: left;
+        background: $primary;
+        border-radius: 20px;
+        margin: 1vh 5%;
+
+
+      }
+      p:last-child {
+        width: 90%;
+        margin: 2vh 5%;
+        font-size: 3vh;
+        font-family: $font;
+        color: $primary;
+        text-align: center;
+        float: left;
+        line-height: 3.5vh;
+        font-weight: bold;
+      }
+    }
+
+    ul {
+      width: 30%;
+      height: 85vh;
+      background: $primary;
+      float: right;
+      margin-right: 1%;
+      border-radius: 5px;
+      opacity: 1;
+      transition: 350ms all;
+      padding: 1vh 0;
+
+      li {
+        float: left;
+        width: 100%;
+        height: 12.14vh;
+
+
+        &>div {
+          width: 90%;
+          height: 10vh;
+          margin: 1vh 5%;
+          float: left;
+          background: $black;
+          border-radius: 5px;
+          left: 0;
+          cursor: pointer;
+        }
+        &>div>p {
+          width: 100%;
+          height: 5vh;
+          margin-top: 3vh;
+          font-size: 3.5vh;
+          text-align: center;
+          font-family: $font2;
+          color: $primary;
+        }
+      }
+    }
+    .list-hidden {
+      opacity: 0;
+    }
+  }
+}
