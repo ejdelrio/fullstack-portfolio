@@ -47,3 +47,13 @@
     background: $primary;
   }
 }
+
+@media (max-width:560px) {
+  #navbar {
+    ul>li {
+      width: 25%;
+      margin: 0;
+      padding: 1vh 0;
+    }
+  }
+}

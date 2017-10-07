@@ -52,7 +52,7 @@ class Skills extends React.Component {
       >
         <section onWheel={() => this.unHide()}>
           <p>Frameworks / Libraries</p>
-          <section className={this.state.display}>
+          <section className={this.state.display} className='hatch'>
             <p>{this.state.clickedItem}</p>
             <div></div>
             {contents[this.state.clickedItem]}

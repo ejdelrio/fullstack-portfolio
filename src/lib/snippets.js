@@ -5,10 +5,10 @@ const snips = module.exports = {};
 snips.node = (
   <div>
     <p>
-      Using Node.js in combination with express, Im able to construct a RESTful APIs quickly and efficiently. APIs easily accomodate two factor authentication and custom middleware.
+      Using Node.js in combination with express, I'm able to construct a RESTful APIs quickly and efficiently. APIs easily accomodate two factor authentication and custom middleware.
 
 
-      Below is a sample of an endpoint that performs a complex database query. The query performs a radial search by distance, using longitude and latitude cooridinates saved to the model.
+      Below is a sample of an endpoint that performs a complex database query. The query performs a radial search by distance, using longitude and latitude coordinates saved to the model.
     </p>
     <pre><code className='language-javascript'>
     profileRouter.get('/api/userQuery/', bearerAuth, {`profileFetch, function(req, res, next) {
