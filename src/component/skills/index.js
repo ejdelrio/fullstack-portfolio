@@ -67,7 +67,10 @@ class Skills extends React.Component {
 
 
     return(
-      <section id='skills' onWheel={() => this.unHide()}>
+      <section id='skills'
+        onWheel={() => this.unHide()}
+        onTouchMove={() => this.unHide()}
+      >
         <div onWheel={() => this.unHide()}>
           <ul>
             {labels.map((val, ind) => {
