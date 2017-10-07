@@ -9,13 +9,14 @@ class Landing extends React.Component {
       <section id='landing'>
         <div>
         </div>
+        <a href='mailto:edwinjdelrio@gmail.com'>✉</a>
         <section>
           <h1 className='fadeIn'>Edwin Del Rio</h1>
           <h2 className='fadeIn'>Fullstack Javascript Developer</h2>
           <div className='fadeIn'></div>
           <p className='fadeIn pulse'>▼</p>
         </section>
-        <a href='mailto:edwinjdelrio@gmail.com'>✉</a>
+
       </section>
     )
   }

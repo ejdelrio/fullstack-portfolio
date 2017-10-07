@@ -73,16 +73,18 @@
 
     section {
       float: left;
-      height: 85vh;
-      padding: 1vh 0;
+      height: 80vh;
+      padding: 3.5vh 0;
       width: 65%;
+      background: $secondary;
+      border-radius: 5px;
 
       p:first-child {
         width: 100%;
         height: 5vh;
         font-size: 5vh;
         font-family: $font;
-        color: $primary;
+        color: $black;
         text-align: center;;
         font-weight: bold;
       }
@@ -102,7 +104,7 @@
         margin: 2vh 5%;
         font-size: 3vh;
         font-family: $font;
-        color: $primary;
+        color: $black;
         text-align: center;
         float: left;
         line-height: 3.5vh;

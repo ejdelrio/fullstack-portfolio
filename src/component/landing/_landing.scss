@@ -22,7 +22,8 @@
     width: 40%;
     height: 50vh;
     float: left;
-    margin: 30vh 30%;
+    margin-left: 30%;
+    margin-top: 30vh;
     z-index: 99999;
 
     h1 {
@@ -51,13 +52,14 @@
       height: 0.5vh;
       background: $white;
       border-radius: 10px;
-      margin: 1vh 25%;
+      margin: 1vh 0;
+      margin-left: 25%;
     }
     p {
       float: left;
       width: 100%;
       text-align: center;
-      color: white;
+      color: $white;
       font-size: 8vh;
       margin-top: 3vh;
       cursor: pointer;
@@ -66,20 +68,64 @@
 
   a {
     position: absolute;
-    top: 0;
     right: 0;
     color: $white;
-    width: 5%;
+    width: 8vw;
     height: 3vh;
-    margin: 1vh 2.5%;
+    margin: 1vh 1vw;
     background: none;
     border: none;
-    font-size: 10vh;
+    font-size: 5vw;
     transition: $transition all;
+    z-index: 99999;
 
     &:hover {
-      font-size: 10.5vh;
+      font-size: 5.5vw;
       cursor: pointer;
+    }
+  }
+}
+
+@media (max-width:1050px) and (min-width: 431px) {
+  #landing {
+    section>h1 {
+      font-size: 4.5vh;
+
+    }
+
+    section>h2 {
+      font-size: 3vh;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    a {
+      bottom: 20%;
+      left: 47vw;
+      margin: 0;
+
+    }
+  }
+}
+
+@media (max-width:430px) {
+  #landing {
+    section>h1 {
+      font-size: 3.5vh;
+      width: 100%;
+    }
+
+    section>h2 {
+      font-size: 2vh;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    a {
+      font-size: 15vw;
+      bottom: 20%;
+      left: 45vw;
+      margin: 0;
     }
   }
 }

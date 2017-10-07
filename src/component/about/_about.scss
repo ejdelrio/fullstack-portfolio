@@ -17,7 +17,7 @@
 
     div {
       float: left;
-      margin: 0.5vw;
+      margin: 0.5vw 0.5vw;
       width: 28vw;
       height: 28vw;
       background: url('../../assets/me.jpg');
@@ -31,6 +31,7 @@
     float: left;
     width: 50%;
     height: 100vh;
+    background: $wht-prim;
 
     h4 {
       float: left;
@@ -57,6 +58,7 @@
     width: 50%;
     height: 100vh;
     float: right;
+    overflow: hidden;
 
 
     @for $i from 1 to 6 {
@@ -91,7 +93,7 @@
 
         div>p {
           width: 90%;
-          font-size: 5vh;
+          font-size: 2.5vw;
           font-family: $font2;
           color: $black;
           float: left;
@@ -106,6 +108,71 @@
       opacity: 0;
       & * {
         opacity: 0;
+      }
+    }
+  }
+}
+
+@media (max-width:780px){
+  #about {
+    &>div>div p {
+      font-size: 2.75vw !important;
+    }
+
+
+    section {
+      .me {
+        width: 25vw;
+        height: 25vw;
+        margin: 0 10vw;
+        margin-top: 10vh;
+        border: 1vw solid black;
+
+        div {
+          width: 22vw;
+          height: 22vw;
+          background-size: 22vw;
+          border: 1vw solid $black;
+        }
+
+      }
+      p {
+        line-height: 4vh;
+        font-weight: bold;
+      }
+
+    }
+  }
+}
+@media (max-width:560px) {
+  #about {
+    &>section, &>div{
+      width: 100%;
+
+    }
+
+    &>div>div p {
+      font-size: 5vw !important;
+    }
+
+    section {
+      .me {
+        width: 50vw;
+        height: 50vw;
+        margin: 5vh 24vw;
+        border: 1vw solid black;
+
+        div {
+          width: 47vw;
+          height: 47vw;
+          background-size: 48vw;
+          border: 1vw solid $black;
+        }
+      }
+      p {
+        font-size: 4vw;
+        line-height: 4vh;
+        font-weight: bold;
       }
     }
   }

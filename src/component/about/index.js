@@ -26,14 +26,6 @@ class About extends React.Component {
       ]
     return(
       <section id='about' onMouseEnter={this.unHide}>
-        <section>
-          <div className='me'>
-            <div></div>
-          </div>
-          <h4>-Fullstack Javascript Developer-</h4>
-          <p>Hello, thanks for visiting my page. My names Edwin. I'm a fullstack web developer primarily based in the west coast. Some of my programming interests include machine learning, social media platforms and client to client interactions. I'm also building my design skills to create beautiful user interfaces.
-          </p>
-        </section>
         <div>
           {labels.map((val, ind) => {
             return(
@@ -45,6 +37,14 @@ class About extends React.Component {
             )
           })}
         </div>
+        <section>
+          <div className='me'>
+            <div></div>
+          </div>
+          <h4>-Fullstack Javascript Developer-</h4>
+          <p>Hello, thanks for visiting my page. My names Edwin. I'm a fullstack web developer primarily based in the west coast. Some of my programming interests include machine learning, social media platforms and client to client interactions. I'm also building my design skills to create beautiful user interfaces.
+          </p>
+        </section>
       </section>
     )
   }

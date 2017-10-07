@@ -15,7 +15,6 @@ class Content extends React.Component {
       <section id='content'>
         <NavBar/>
         <About />
-        <Skills/>
       </section>
     )
   }
