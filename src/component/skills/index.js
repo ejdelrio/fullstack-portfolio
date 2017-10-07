@@ -1,5 +1,6 @@
 import './_skills.scss';
 import React from 'react';
+import snippets from '../../lib/snippets.js';
 
 class Skills extends React.Component {
   constructor(props) {
@@ -35,11 +36,6 @@ class Skills extends React.Component {
   }
 
   render() {
-    let labels = [
-      'HTML5',
-      'CSS3',
-      'JavaScript'
-    ]
 
     let techs = [
       'Node.js',
@@ -71,25 +67,12 @@ class Skills extends React.Component {
         onWheel={() => this.unHide()}
         onTouchMove={() => this.unHide()}
       >
-        <div onWheel={() => this.unHide()}>
-          <ul>
-            {labels.map((val, ind) => {
-              return(
-                <li key={ind} className={this.state.classSwitch}>
-                  <div>
-                    <p>{val}</p>
-                  </div>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
         <section onWheel={() => this.unHide()}>
           <p>Frameworks / Libraries</p>
           <section className={this.state.display}>
             <p>{this.state.clickedItem}</p>
             <div></div>
-            <p>{contents[this.state.clickedItem]}</p>
+            {snippets.node()}
           </section>
           <ul className={this.state.techList}>
             {Object.keys(contents).map((val, ind) => {

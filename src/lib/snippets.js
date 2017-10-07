@@ -1,0 +1,61 @@
+import React from 'react';
+
+const snips = module.exports = {};
+
+snips.node = () => {
+  return(
+    <p>
+      Using Node.js in combination with express, Im able to construct a RESTful APIs quickly and efficiently. APIs easily accomodate two factor authentication and custom middleware.
+
+
+      Below is a sample of an endpoint that performs a complex database query. The query performs a radial search by distance, using longitude and latitude cooridinates saved to the model.
+      <pre><code className='language-javascript'>
+      profileRouter.get('/api/userQuery/', bearerAuth, {`profileFetch, function(req, res, next) {
+        debug('GET /api/userQuery/'); //Test to see if radial searches work;
+        //the limit parameter dictates how many items we'll pull per query
+        //max represents max distance from the users location.
+        let maxDistance = parseInt(req.query.maxDistance)/100;
+        let coords = req.query.location;
+        let limit = parseInt(req.query.limit);
+
+        let locationQuery = {
+          location: {
+            $near: coords,
+            $maxDistance: maxDistance
+          },
+          type: req.query.type
+        };
+
+        Profile.find(locationQuery)
+        .limit(limit)
+        .exec(function(err, result) {
+          if(err) return next(createError(400, err.message));
+          let genres = req.query.genres;
+          if(genres === '') return res.json(result);
+
+
+          let genreHashMap = {};
+          let newResult = [];
+
+          genres.split(' ').forEach(val => {
+            genreHashMap[val] = true;
+          });
+
+          result.forEach(val => {
+            for (let i = 0; i < val.genre.length; i++) {
+
+              if(genreHashMap[val.genre[i]]) {
+                newResult.push(val);
+                break;
+              }
+            }
+          });
+          res.json(newResult);
+        })
+        .catch(err => next(createError(404, err)));
+      });`}
+
+      </code></pre>
+    </p>
+  )
+};
