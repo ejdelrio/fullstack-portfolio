@@ -68,7 +68,7 @@ class Skills extends React.Component {
 
     return(
       <section id='skills' onWheel={() => this.unHide()}>
-        <div>
+        <div onWheel={() => this.unHide()>
           <ul>
             {labels.map((val, ind) => {
               return(
@@ -81,7 +81,7 @@ class Skills extends React.Component {
             })}
           </ul>
         </div>
-        <section>
+        <section onWheel={() => this.unHide()>
           <p>Frameworks / Libraries</p>
           <section className={this.state.display}>
             <p>{this.state.clickedItem}</p>
