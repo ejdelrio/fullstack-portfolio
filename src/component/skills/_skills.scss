@@ -155,3 +155,52 @@
     }
   }
 }
+
+@media (max-width: 840px) {
+  #skills {
+    section {
+      p:first-child {
+        font-size: 4vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  #skills {
+    &>div {
+      width: 100%;
+      background: $black;
+      ul {
+        width: 100%;
+        margin: 0;
+        li {
+          margin-left: 35vw !important;
+        }
+      }
+    }
+
+    &>section {
+      width: 100%;
+      background: $black;
+
+      p:first-child {
+        font-size: 7vw;
+        width: 95%;
+        margin-left: 5%;
+      }
+
+      section {
+        width: 60%;
+        margin: 0;
+      }
+      ul{
+        width: 40%;
+        margin: 0;
+        p {
+          font-size: 5vw !important;
+        }
+      }
+    }
+  }
+}
