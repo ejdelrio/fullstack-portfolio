@@ -9,7 +9,7 @@ class Skills extends React.Component {
       classSwitch: 'hidden',
       techClass: 'tech-hidden',
       techList: 'list-hidden',
-      clickedItem: 'Node.js',
+      clickedItem: 'React.js / Redux',
       display: 'item-1'
     }
     this.unHide = this.unHide.bind(this);
@@ -38,8 +38,8 @@ class Skills extends React.Component {
   render() {
 
     let contents = {
-      'Node.js': snippets.node,
       'React.js / Redux': snippets.react,
+      'Node.js': snippets.node,
       'MongoDB': snippets.node,
       'AWS': snippets.node,
       'Heroku': snippets.node,
