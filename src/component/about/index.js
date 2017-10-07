@@ -25,7 +25,7 @@ class About extends React.Component {
       'Interactive Web Pages'
       ]
     return(
-      <section id='about' onMouseEnter={this.unHide}>
+      <section id='about' onWheel={this.unHide}>
         <div>
           {labels.map((val, ind) => {
             return(

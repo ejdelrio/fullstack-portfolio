@@ -67,7 +67,7 @@ class Skills extends React.Component {
 
 
     return(
-      <section id='skills' onMouseEnter={() => this.unHide()}>
+      <section id='skills' onWheel={() => this.unHide()}>
         <div>
           <ul>
             {labels.map((val, ind) => {
