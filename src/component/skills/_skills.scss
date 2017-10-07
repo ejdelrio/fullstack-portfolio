@@ -103,6 +103,8 @@
         width: 90%;
         margin: 2vh 5%;
         font-size: 3vh;
+        height: 70vh;
+        overflow-y: scroll;
         font-family: $font;
         color: $black;
         text-align: center;
@@ -185,7 +187,7 @@
       background: $black;
 
       p:first-child {
-        font-size: 7vw;
+        font-size: 7vw !important;
         width: 95%;
         margin-left: 5%;
       }
