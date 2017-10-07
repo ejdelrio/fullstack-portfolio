@@ -12,33 +12,31 @@ snips.node = (
     </p>
     <pre><code className='language-javascript'>
     profileRouter.get('/api/userQuery/', bearerAuth, {`profileFetch, function(req, res, next) {
-      debug('GET /api/userQuery/'); //Test to see if radial searches work;
+      debug('GET /api/userQuery/'); searches work;
       //the limit parameter dictates how many items we'll pull per query
       //max represents max distance from the users location.
-      let maxDistance = parseInt(req.query.maxDistance)/100;
-      let coords = req.query.location;
-      let limit = parseInt(req.query.limit);
+
+      let {maxDistance, coords, limit, type, genres} = req.query
 
       let locationQuery = {
         location: {
           $near: coords,
-          $maxDistance: maxDistance
+          $maxDistance: parseInt(maxDistance)/100;
         },
         type: req.query.type
       };
 
       Profile.find(locationQuery)
-      .limit(limit)
+      .limit(parseInt(limit))
       .exec(function(err, result) {
         if(err) return next(createError(400, err.message));
-        let genres = req.query.genres;
-        if(genres === '') return res.json(result);
+        if(genres.length === 0) return res.json(result);
 
 
         let genreHashMap = {};
         let newResult = [];
 
-        genres.split(' ').forEach(val => {
+        genres.forEach(val => {
           genreHashMap[val] = true;
         });
 
@@ -54,7 +52,8 @@ snips.node = (
         res.json(newResult);
       })
       .catch(err => next(createError(404, err)));
-    });`}
+    });
+  }`}
 
     </code></pre>
   </div>
@@ -66,62 +65,64 @@ snips.react = (
       React's one way data flow, complimented by Redux's state managment lends way to the development of incredibly performant applications. React's component architecture is akin to a digital playground. It's by far my favorite framework to work with :D
     </p>
     <pre><code className='language-javascript'>
-    {`import React from 'react';
+    {`
+    import React from 'react';
 
-      class AutoCompInput extends React.Component {
-        constructor(props) {
-          super(props);
-          this.state = {
-            queryResults: [],
-            textInput: ''
-          }
-          this.onChange = this.onChange.bind(this);
+    class AutoCompInput extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          queryResults: [],
+          textInput: ''
         }
-
-        componentWillMount() {
-          let {Tree, library} = this.props;
-          this.genreLibrary = new Tree();
-          this.genreLibrary.loadLibrary(library);
-        }
-        componentDidMount() {
-          console.log(this.genreLibrary);
-        }
-
-        onChange(e) {
-          let {name, value} = e.target;
-          let queryResults = value.length > 0 ?  this.genreLibrary.searchWords(value): [];
-          this.setState({
-            [name]: value,
-            queryResults
-          })
-        }
-
-        render() {
-          return(
-            <div id={this.props.className}>
-              <input
-                type='text'
-                name='textInput'
-                placeholder={this.props.placeholder}
-                onChange={this.onChange}
-                value={this.state.textInput}
-                autoComplete='off'
-              />
-              <ul>
-                {this.state.queryResults.map((item, ind) => {
-                  return(
-                    <li key={ind} onClick={() => this.props.onComplete(item)}>
-                      {this.props.element(item)}
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )
-        }
+        this.onChange = this.onChange.bind(this);
       }
 
-      export default AutoCompInput`}
+      componentWillMount() {
+        let {Tree, library} = this.props;
+        this.genreLibrary = new Tree();
+        this.genreLibrary.loadLibrary(library);
+      }
+      componentDidMount() {
+        console.log(this.genreLibrary);
+      }
+
+      onChange(e) {
+        let {name, value} = e.target;
+        let queryResults = value.length > 0 ?  this.genreLibrary.searchWords(value): [];
+        this.setState({
+          [name]: value,
+          queryResults
+        })
+      }
+
+      render() {
+        return(
+          <div id={this.props.className}>
+            <input
+              type='text'
+              name='textInput'
+              placeholder={this.props.placeholder}
+              onChange={this.onChange}
+              value={this.state.textInput}
+              autoComplete='off'
+            />
+            <ul>
+              {this.state.queryResults.map((item, ind) => {
+                return(
+                  <li key={ind} onClick={() => this.props.onComplete(item)}>
+                    {this.props.element(item)}
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        )
+      }
+    }
+
+    export default AutoCompInput
+    `}
     </code></pre>
   </div>
 )
