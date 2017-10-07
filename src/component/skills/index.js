@@ -81,7 +81,7 @@ class Skills extends React.Component {
             })}
           </ul>
         </div>
-        <section onWheel={() => this.unHide()>
+        <section onWheel={() => this.unHide()}>
           <p>Frameworks / Libraries</p>
           <section className={this.state.display}>
             <p>{this.state.clickedItem}</p>
