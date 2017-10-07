@@ -25,7 +25,10 @@ class About extends React.Component {
       'Interactive Web Pages'
       ]
     return(
-      <section id='about' onWheel={this.unHide}>
+      <section id='about'
+        onWheel={this.unHide}
+        onTouchMove={() => this.unHide()}
+      >
         <div>
           {labels.map((val, ind) => {
             return(
