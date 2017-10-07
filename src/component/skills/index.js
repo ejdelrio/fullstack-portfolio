@@ -42,7 +42,6 @@ class Skills extends React.Component {
       'Node.js': snippets.node,
       'MongoDB': snippets.node,
       'AWS': snippets.node,
-      'Heroku': snippets.node,
     }
 
 

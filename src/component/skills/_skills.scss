@@ -31,6 +31,17 @@
       background: $secondary;
       border-radius: 5px;
 
+      &>div:first-of-type {
+        width: 90%;
+        height: 1vh;
+        float: left;
+        background: $primary;
+        border-radius: 20px;
+        margin: 1vh 5%;
+
+
+      }
+
       p:first-child {
         width: 100%;
         height: 5vh;
@@ -39,17 +50,6 @@
         color: $black;
         text-align: center;;
         font-weight: bold;
-      }
-
-      div:first-child {
-        width: 90%;
-        height: 0.5vh;
-        float: left;
-        background: $primary;
-        border-radius: 20px;
-        margin: 1vh 5%;
-
-
       }
 
       div:last-child {
@@ -71,11 +71,15 @@
           float: left;
           line-height: 3.5vh;
           font-weight: bold;
+          margin: 0;
         }
         pre {
           float: left;
+          margin: 0;
+          padding: 0;
         }
         pre, code {
+
           width: 100%;
           overflow-x: auto;
           font-size: 1vw;
@@ -98,7 +102,7 @@
       li {
         float: left;
         width: 100%;
-        height: 12.14vh;
+        height: 21.5vh;
 
 
         &>div {
@@ -128,39 +132,66 @@
   }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 840px) and (min-width: 561px) {
   #skills {
-    section {
+    &>section {
       p:first-child {
         font-size: 4vw;
+      }
+      div:last-child>p {
+        font-size: 5vh;
+      }
+    }
+    ul>li {
+
+      p {
+        font-size: 2.5vw !important;
       }
     }
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 560px){
   #skills {
 
     &>section {
       width: 100%;
       background: $black;
 
-      p:first-child {
+      &>p:first-child {
         font-size: 7vw !important;
         width: 95%;
         margin-left: 5%;
       }
 
       section {
-        width: 60%;
+        width: 100%;
+        height: 45vh;
         margin: 0;
+        overflow-y: scroll;
+        div:last-child>p {
+          font-size: 2vh !important;
+        }
       }
       ul{
-        width: 40%;
+        width: 100%;
+        height: 30vh;
         margin: 0;
-        p {
-          font-size: 5vw !important;
+        margin-top: 2vh;
+        li {
+          float: left;
+          height: 9vh;
+          display: inline-block;
+          width: 40%;
+          margin-left: 6.66%;
+          margin-top: 2vh;
+
+          p {
+            font-size: 4vw !important;
+          }
+
         }
+
       }
     }
   }
