@@ -26,7 +26,7 @@ class About extends React.Component {
       ]
     return(
       <section id='about'
-        onWheel={this.unHide}
+        onMouseOver={this.unHide}
         onTouchMove={() => this.unHide()}
       >
         <div>

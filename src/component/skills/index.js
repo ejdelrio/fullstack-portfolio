@@ -1,12 +1,14 @@
 import './_skills.scss';
 import React from 'react';
+
 import snippets from '../../lib/snippets.js';
+import PrismSnip from '../prism-snip';
+
 
 class Skills extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      classSwitch: 'hidden',
       techClass: 'tech-hidden',
       techList: 'list-hidden',
       clickedItem: 'React.js / Redux',
@@ -40,14 +42,14 @@ class Skills extends React.Component {
     let contents = {
       'React.js / Redux': snippets.react,
       'Node.js': snippets.node,
-      'MongoDB': snippets.node,
-      'AWS': snippets.node,
+      'MongoDB': snippets.mongo,
+      'AWS': snippets.aws,
     }
 
 
     return(
       <section id='skills'
-        onWheel={() => this.unHide()}
+        onMouseOver={() => this.unHide()}
         onTouchMove={() => this.unHide()}
       >
         <section onWheel={() => this.unHide()}>
