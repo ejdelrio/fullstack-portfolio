@@ -65,23 +65,22 @@
       cursor: pointer;
     }
   }
-
-  a {
+  svg {
     position: absolute;
+    width: 5vw;
+    height: 5vh;
     right: 0;
-    color: $white;
-    width: 8vw;
-    height: 3vh;
-    margin: 1vh 1vw;
-    background: none;
-    border: none;
-    font-size: 5vw;
-    transition: $transition all;
-    z-index: 99999;
-
+    top: 0;
+    margin: 2vh 2.5%;
+    transition: 350ms all;
+    cursor: pointer;
     &:hover {
-      font-size: 5.5vw;
-      cursor: pointer;
+      width: 5.5vw;
+      height: 6vh;
+    }
+
+    g {
+      fill: $white;
     }
   }
 }
@@ -99,10 +98,9 @@
       margin-left: 0;
       margin-right: 0;
     }
-    a {
-      bottom: 20%;
-      left: 47vw;
-      margin: 0;
+    svg {
+
+
 
     }
   }
@@ -121,11 +119,12 @@
       margin-left: 0;
       margin-right: 0;
     }
-    a {
+    svg {
+      width: 10vw;
+      height: 6vh;
       font-size: 15vw;
-      bottom: 20%;
-      left: 45vw;
-      margin: 0;
+      margin: 1vh 5%;
+
     }
   }
 }
