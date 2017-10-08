@@ -22,7 +22,7 @@ class About extends React.Component {
       'API Architecture',
       'Responsive UI',
       'Single Page Apps',
-      'Interactive Web Pages'
+      'MVC Architecture'
       ]
     return(
       <section id='about'

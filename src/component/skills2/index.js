@@ -26,6 +26,7 @@ class Skills2 extends React.Component {
     return(
       <section id='skills2'
         onMouseOver={this.unHide}
+        onTouchMove={this.unHide}
       >
         <h5 className={this.state.rightSwitch}>Skills</h5>
         <div className={this.state.divSwitch}></div>

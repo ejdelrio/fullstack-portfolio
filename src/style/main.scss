@@ -2,9 +2,13 @@
 @import './lib/animations.scss';
 @import './lib/prism-theme.scss';
 
+body {
+  width: 100vw;
+}
 #root {
   width: 100%;
-  height: 100vh;
+  height: auto;
+  float: left;
 
   &>section {
     width: 100%;

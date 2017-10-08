@@ -76,8 +76,8 @@
     transition: 350ms all;
     cursor: pointer;
     &:hover {
-      width: 5.5vw;
-      height: 6vh;
+      animation-name: wiggle;
+      animation-duration: 1.5s;
     }
 
     g {

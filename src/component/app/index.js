@@ -6,6 +6,7 @@ import * as util from '../../lib/util.js';
 import Content from '../content';
 import Landing from '../landing';
 import Contact from '../contact';
+import Footer from '../footer';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class App extends React.Component {
               open={this.unHide}
             />
             <Content />
+            <Footer />
           </section>
           <Contact
             close={this.unHide}
