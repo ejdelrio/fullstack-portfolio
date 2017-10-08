@@ -5,8 +5,23 @@ import * as util from '../../lib/util.js';
 
 import Content from '../content';
 import Landing from '../landing';
+import Contact from '../contact';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      messageStatus: ''
+    }
+    this.unHide = this.unHide.bind(this);
+  }
+
+  unHide() {
+    let messageStatus = this.state.messageStatus === '' ?
+    'message-hidden': '';
+    this.setState({messageStatus});
+  }
 
 
   render() {
@@ -14,9 +29,15 @@ class App extends React.Component {
       <BrowserRouter>
         <section id='router'>
           <section>
-            <Landing/>
+            <Landing
+              open={this.unHide}
+            />
             <Content />
           </section>
+          <Contact
+            close={this.unHide}
+            className={this.state.messageStatus}
+          />
         </section>
       </BrowserRouter>
     );

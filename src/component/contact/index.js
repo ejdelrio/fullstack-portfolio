@@ -26,7 +26,8 @@ class Contact extends React.Component {
   }
   render() {
     return(
-      <section id='contact'>
+      <section id='contact' className={this.props.className}>
+        <button onClick={this.props.close}>✖</button>
         <form onSubmit={this.sendMessage}>
           <input
             type='text'
@@ -45,7 +46,7 @@ class Contact extends React.Component {
           <input
             type='text'
             name='subject'
-            placeholder='Please Enter a Subject',
+            placeholder='Please Enter a Subject'
             value={this.state.subject}
             onChange={this.onChange}
           />
@@ -62,3 +63,5 @@ class Contact extends React.Component {
     )
   }
 }
+
+export default Contact;

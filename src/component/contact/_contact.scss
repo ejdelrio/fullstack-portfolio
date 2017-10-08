@@ -1,1 +1,102 @@
 @import '../../style/lib/vars.scss';
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(-30deg);
+  }
+  40% {
+    transform: rotate(30deg);
+  }
+  60% {
+    transform: rotate(-30deg);
+  }
+  80% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+
+#contact {
+  height: 100vh;
+  width: 30vw;
+  background: $black;
+  border-left: 1vw solid $secondary;
+  z-index: 9999999;
+  position: fixed;
+  right: 0;
+  transition: 350ms ease-out;
+
+  &>button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    color: $secondary;
+    font-size: 2.5vw;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 0 5%;
+    margin-top: 2vh;
+    transition: 350ms all;
+    cursor: pointer;
+
+    &:hover {
+      animation-name: wiggle;
+      animation-duration: 1.5s;
+    }
+  }
+
+  form {
+    width: 90%;
+    height: 70vh;
+    float: left;
+    margin-top: 10vh;
+
+    input, textarea {
+      width: 80%;
+      height: 3vh;
+      border: none;
+      border-radius: 2px;
+      padding: 1vh 2.5%;
+      margin: 2vh 5%;
+      background: $wht-prim;
+      font-size: 1vw;
+      color: $black;
+      transition: 350ms all;
+
+      &:focus {
+        background: black;
+        color: $primary;
+      }
+    }
+    textarea {
+      height: 30vh;
+    }
+    button {
+      width: 35%;
+      font-size: 1vw;
+      font-family: $font;
+      height: 5vh;
+      border: none;
+      border-radius: 3px;
+      float: right;
+      margin: 1vh 10%;
+      background: $secondary;
+      cursor: pointer;
+      transition: 350ms all;
+      &:hover {
+        background: $primary;
+      }
+    }
+  }
+}
+.message-hidden {
+  transition: 500ms ease-out;
+  right: -31% !important;
+}

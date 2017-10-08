@@ -20,7 +20,7 @@ class About extends React.Component {
     let labels = [
       'Front End Design',
       'API Architecture',
-      'Dynamic UI',
+      'Responsive UI',
       'Single Page Apps',
       'Interactive Web Pages'
       ]
