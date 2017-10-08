@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      messageStatus: ''
+      messageStatus: 'message-hidden'
     }
     this.unHide = this.unHide.bind(this);
   }
