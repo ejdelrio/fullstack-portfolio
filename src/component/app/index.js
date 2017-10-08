@@ -34,7 +34,9 @@ class App extends React.Component {
               open={this.unHide}
             />
             <Content />
-            <Footer />
+            <Footer
+              message={this.unHide}
+            />
           </section>
           <Contact
             close={this.unHide}

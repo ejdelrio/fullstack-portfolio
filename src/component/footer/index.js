@@ -35,7 +35,7 @@ class Footer extends React.Component {
               </svg>
             </a>
           </li>
-          <li>
+          <li onClick={this.props.message}>
             <svg
               style={{'enableBackground':'new 0 0 1691 1407'}}
               version="1.1"
