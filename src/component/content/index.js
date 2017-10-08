@@ -3,8 +3,9 @@ import React from 'react';
 
 import NavBar from '../navbar';
 import About from '../about';
-import Skills from '../skills';
+import Projects from '../projects';
 import Skills2 from '../skills2';
+
 
 class Content extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class Content extends React.Component {
         <NavBar/>
         <About />
         <Skills2/>
+        <Projects />
       </section>
     )
   }

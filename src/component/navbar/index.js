@@ -22,6 +22,9 @@ class NavBar extends React.Component {
           <li>
             <a href='#landing'>Projects</a>
           </li>
+          <li>
+            <a href='#foot'>Contact</a>
+          </li>
         </ul>
         <div>
         </div>
