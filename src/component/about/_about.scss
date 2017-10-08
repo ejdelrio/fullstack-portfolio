@@ -5,6 +5,8 @@
   height: 100vh;
   background: $wht-prim;
 
+
+
   .me {
     float: left;
     width: 30vw;
@@ -115,6 +117,7 @@
 
 @media (max-width:780px){
   #about {
+    height: 200vh;
     &>div>div p {
       font-size: 2.5vw !important;
     }
@@ -146,6 +149,7 @@
 }
 @media (max-width:560px) {
   #about {
+    height: 200vh;
     &>section, &>div{
       width: 100%;
 

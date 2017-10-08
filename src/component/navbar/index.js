@@ -11,16 +11,16 @@ class NavBar extends React.Component {
       <section id='navbar'>
         <ul>
           <li>
-            <p>Home</p>
+            <a href='#landing'>Home</a>
           </li>
           <li>
-            <p>About</p>
+            <a href='#about'>About</a>
           </li>
           <li>
-            <p>Blog</p>
+            <a href='#skills2'>Skills</a>
           </li>
           <li>
-            <p>Projects</p>
+            <a href='#landing'>Projects</a>
           </li>
         </ul>
         <div>

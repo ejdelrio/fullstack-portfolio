@@ -24,7 +24,7 @@ class Landing extends React.Component {
           <h1 className='fadeIn'>Edwin Del Rio</h1>
           <h2 className='fadeIn'>Fullstack Javascript Developer</h2>
           <div className='fadeIn'></div>
-          <p className='fadeIn pulse'>▼</p>
+          <a href='#about' className='fadeIn pulse'>▼</a>
         </section>
 
       </section>

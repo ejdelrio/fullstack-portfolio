@@ -55,7 +55,7 @@
       margin: 1vh 0;
       margin-left: 25%;
     }
-    p {
+    a {
       float: left;
       width: 100%;
       text-align: center;
@@ -63,6 +63,7 @@
       font-size: 8vh;
       margin-top: 3vh;
       cursor: pointer;
+      text-decoration: none;
     }
   }
   svg {

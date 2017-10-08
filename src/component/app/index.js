@@ -12,9 +12,11 @@ class App extends React.Component {
   render() {
     return(
       <BrowserRouter>
-        <section>
-          <Landing/>
-          <Content />
+        <section id='router'>
+          <section>
+            <Landing/>
+            <Content />
+          </section>
         </section>
       </BrowserRouter>
     );

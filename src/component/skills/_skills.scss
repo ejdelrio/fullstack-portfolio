@@ -42,7 +42,7 @@
 
       }
 
-      p:first-child {
+      &>p:first-child {
         width: 100%;
         height: 5vh;
         font-size: 5vh;
@@ -60,7 +60,6 @@
         text-align: center;
         float: left;
         line-height: 3.5vh;
-        font-weight: bold;
         p {
           font-size: 3vh;
           font-family: $font;
@@ -70,7 +69,6 @@
           text-align: center;
           float: left;
           line-height: 3.5vh;
-          font-weight: bold;
           margin: 0;
         }
         pre {

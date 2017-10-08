@@ -26,9 +26,11 @@ class About extends React.Component {
       ]
     return(
       <section id='about'
+        className='panel'
         onMouseOver={this.unHide}
         onTouchMove={() => this.unHide()}
       >
+        <a id='about'></a>
         <div>
           {labels.map((val, ind) => {
             return(
@@ -40,7 +42,7 @@ class About extends React.Component {
             )
           })}
         </div>
-        <section>
+        <section className='panel'>
           <div className='me'>
             <div></div>
           </div>
