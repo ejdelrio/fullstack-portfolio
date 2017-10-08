@@ -38,7 +38,6 @@ class Skills2 extends React.Component {
               <li>React / Redux</li>
               <li>HTML5</li>
               <li>Handlebars</li>
-              <li>Jquery</li>
             </ul>
           </li>
           <li className={this.state.leftSwitch}>
