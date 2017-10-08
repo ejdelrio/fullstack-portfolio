@@ -41,15 +41,16 @@
       display: inline-block;
       width: 5vw;
       height: 5vw;
-      margin-left: 8vw;
+      margin-left: 5.5vw;
       border-radius: 80px;
       border: 0.5vw solid $primary;
       overflow: hidden;
+      cursor: pointer;
       a {
         float: left;
         width: 5vw;
         height: 5vh;
-        cursor: pointer;
+
       }
       svg {
         height: 4vw;
@@ -58,6 +59,7 @@
         margin-top: 1vw;
         * {
           fill: #EBB956;
+          float: left;
         }
       }
     }
@@ -67,7 +69,42 @@
         margin-top:  1vw;
         height: 3vw;
         width: 3vw;
+        * {
+          height: 3vw;
+          width: 3vw;
+        }
       }
+    }
+    &>:nth-child(4) {
+      svg {
+        margin-left: 1vw;
+        margin-top:  1vw;
+        height: 3vw;
+        width: 3vw;
+        * {
+          height: 3vw;
+          width: 3vw;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: 568px) and (min-width: 541px){
+  #foot {
+    height: 40vh;
+    ul {
+      margin-top: 3vh;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  #foot {
+    height: 20vh;
+    ul {
+      margin-top: 3vh;
     }
   }
 }
