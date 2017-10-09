@@ -6,7 +6,7 @@
   float: left;
   background: $wht-prim;
   padding-top: 8vh;
-  
+
   h5 {
     float: left;
     width: 95%;
@@ -93,6 +93,12 @@
         width 350ms linear 700ms,
         margin-top .5s linear 1050ms,
         left .5s linear 1550ms;
+        &>:hover {
+          animation-name: divpulse;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+
         &>p {
           font-size: 2vw;
           transition: font-size 350ms linear 0ms;
@@ -140,5 +146,19 @@
         }
       }
     }
+  }
+}
+
+@keyframes divpulse {
+  0% {
+    color: $primary;
+  }
+
+  50% {
+    color: $wht-prim;
+  }
+
+  100% {
+    color: $primary;
   }
 }
