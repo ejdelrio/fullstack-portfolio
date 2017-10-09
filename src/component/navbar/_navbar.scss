@@ -112,11 +112,14 @@ div.open-menu {
 
 @media (max-width: 736px) {
   #navbar {
-    height: 8vh;
+    height: 10vh;
     ul {
-      height: 7vh;
+      height: 10vh;
       li {
-        height: 7vh;
+        height: 10vh;
+        a {
+          padding: 3vh 0;
+        }
       }
     }
   }
