@@ -1,6 +1,8 @@
 import './_projects.scss';
 import React from 'react';
 
+import snippets from '../../lib/snippets.js';
+
 class Projects extends React.Component {
   constructor(props) {
     super(props);
@@ -33,14 +35,14 @@ class Projects extends React.Component {
             onClick={() => this.unHide('node')}
           >
             <p>Node.js</p>
-            <div>Some stuff</div>
+            {snippets.node}
           </div>
           <div
             className={this.state.react}
             onClick={() => this.unHide('react')}
           >
             <p>React</p>
-            <div>Some stuff</div>
+            {snippets.react}
           </div>
           <div
             className={this.state.mongo}
