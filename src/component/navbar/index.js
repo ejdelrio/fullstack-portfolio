@@ -19,23 +19,31 @@ class NavBar extends React.Component {
   render() {
     return(
       <section id='navbar'>
-        <ul>
+        <ul className={this.state.menuClass}>
           <li>
             <a href='#landing'
-              onClick={this.menuClass}
+              onClick={this.menuClick}
             >Home</a>
           </li>
           <li>
-            <a href='#about'>About</a>
+            <a href='#about'
+              onClick={this.menuClick}
+            >About</a>
           </li>
           <li>
-            <a href='#skills2'>Skills</a>
+            <a href='#skills2'
+              onClick={this.menuClick}
+            >Skills</a>
           </li>
           <li>
-            <a href='#projects'>Code</a>
+            <a href='#projects'
+              onClick={this.menuClick}
+            >Code</a>
           </li>
           <li>
-            <a href='#foot'>Contact</a>
+            <a href='#foot'
+              onClick={this.menuClick}
+            >Contact</a>
           </li>
         </ul>
         <div></div>

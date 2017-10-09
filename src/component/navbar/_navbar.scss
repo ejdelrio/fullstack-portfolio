@@ -19,6 +19,7 @@
     width: 100%;
     height: 5.5vh;
     float: left;
+    transition: 350ms all;
     * {
       transition: 350ms all;
     }
@@ -41,6 +42,109 @@
         background: $primary;
         a {
           color: $black;
+        }
+      }
+    }
+  }
+
+  &>div:last-of-type {
+    display: none;
+    width: 6vw;
+    height: 6vw;
+    background: $black;
+    position: fixed;
+    padding: 1vw;
+    right: 0;
+    border-radius: 1px;
+    &>div {
+
+      width: 85%;
+      height: 0.5vw;
+      background: $primary;
+      border-radius: 50px;
+      position: absolute;
+      left: 7.5%;
+      transition: 350ms all ease-in-out;
+    }
+    #first {
+    margin-top: 1.125vw;
+
+    }
+    #second {
+      margin-top: 2.75vw;
+    }
+    #third {
+      margin-top: 4.375vw;
+    }
+  }
+}
+
+div.open-menu {
+  width: 6vw;
+  height: 6vw;
+  position: fixed;
+  padding: 1vw;
+  right: 0;
+  &>div {
+    width: 100%;
+    height: 0.5vw;
+    background: $primary;
+    border-radius: 50px;
+    position: absolute;
+    transition: 350ms all ease-in-out;
+  }
+  #first {
+    margin-top: 2.375vw !important;
+    transform: rotate(45deg);
+    transition: 350ms all ease-in-out;
+  }
+  #second {
+    margin-top: 2.375vw !important;
+    transform: rotate(45deg);
+    transition: 350ms all ease-in-out;
+  }
+  #third {
+    margin-top: 2.375vw !important;
+    transform: rotate(-45deg);
+    transition: 350ms all ease-in-out;
+  }
+}
+
+@media (max-width: 560px) {
+  #navbar {
+    background: none;
+    &>div:first-of-type {
+      display: none;
+    }
+    &>div:last-of-type {
+      display: block;
+      margin-right: 5%;
+      margin-top: 3vw
+
+    }
+    ul {
+      width: 0;
+      margin-top: 11vw;
+      margin-left: 90%;
+      li {
+        height: 0;
+        display: inline;
+        width: 100%;
+        background: $black;
+        border-bottom: 1vh solid $primary;
+        a {
+          display: none;
+        }
+      }
+    }
+    ul.open-menu {
+      width: 90%;
+      margin-left: 5%;
+      li {
+        height: 8vh;
+        a {
+          display: block;
+          padding: 2vh 0;
         }
       }
     }
