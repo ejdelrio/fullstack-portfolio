@@ -49,8 +49,16 @@ class Projects extends React.Component {
             onClick={() => this.unHide('mongo')}
           >
             <p>MongoDB</p>
-            <div>Some stuff</div>
+            {snippets.mongo}
           </div>
+          <div
+            className={this.state.aws}
+            onClick={() => this.unHide('aws')}
+          >
+            <p>AWS</p>
+            {snippets.aws}
+          </div>
+
         </section>
       </section>
     )
