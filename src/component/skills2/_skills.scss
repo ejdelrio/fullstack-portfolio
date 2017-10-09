@@ -1,6 +1,7 @@
 @import '../../style/lib/vars.scss';
 
 #skills2 {
+  padding-top: 7vh;
   width: 100%;
   height: 100vh;
   float: left;
@@ -96,6 +97,7 @@
 
 @media (max-width: 560px) {
   #skills2 {
+    
     height: 150vh;
     h5 {
       font-size: 4vw;
