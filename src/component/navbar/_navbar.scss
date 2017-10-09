@@ -110,6 +110,18 @@ div.open-menu {
   }
 }
 
+@media (max-width: 736px) {
+  #navbar {
+    height: 8vh;
+    ul {
+      height: 7vh;
+      li {
+        height: 7vh;
+      }
+    }
+  }
+}
+
 @media (max-width: 560px) {
   #navbar {
     background: none;
