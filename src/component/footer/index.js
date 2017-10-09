@@ -25,7 +25,7 @@ class Footer extends React.Component {
             </a>
           </li>
           <li>
-            <a href='linkedin.com/in/edwin-del-rio-b485b2b8/'>
+            <a href='https://linkedin.com/in/edwin-del-rio-b485b2b8/'>
               <svg version="1.1" viewBox="0 0 512 512">
               <g>
               </g>

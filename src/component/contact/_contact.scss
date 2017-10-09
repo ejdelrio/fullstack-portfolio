@@ -41,18 +41,20 @@
     input, textarea {
       width: 80%;
       height: 3vh;
-      border: none;
+      background: none;
+      border: 0.25vh solid $black;
+      border-bottom: 0.25vh solid $wht-prim;
       border-radius: 2px;
       padding: 1vh 2.5%;
       margin: 2vh 5%;
-      background: $wht-prim;
       font-size: 1vw;
-      color: $black;
+      color: $primary;
       transition: 350ms all;
 
       &:focus {
-        background: black;
-        color: $primary;
+        background: $wht-prim;
+        color: $black;
+        border: 0.25vh solid $wht-prim
       }
     }
     textarea {
