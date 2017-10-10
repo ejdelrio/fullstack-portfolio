@@ -9,6 +9,15 @@
   position: fixed;
   right: 0;
   transition: 350ms ease-out;
+  &>p {
+    float: left;
+    color: red;
+    margin: 4vh 5%;
+    font-size: 3vh;
+    font-family: $font;
+    animation-name: ptagfade;
+    animation-duration: 1s;
+  }
 
   &>button {
     position: absolute;
@@ -78,6 +87,9 @@
     }
   }
 }
+.inputError {
+  box-shadow: 0px 0px 5px 2px red;
+}
 .message-hidden {
   transition: 500ms ease-out;
   right: -31% !important;
@@ -93,5 +105,14 @@
   .message-hidden {
     transition: 500ms ease-out;
     right: -91% !important;
+  }
+}
+
+@keyframes ptagfade {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
