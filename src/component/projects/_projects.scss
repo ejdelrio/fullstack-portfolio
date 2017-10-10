@@ -8,6 +8,7 @@
   padding-top: 8vh;
   overflow: hidden;
 
+
   h5 {
     float: left;
     width: 95%;
@@ -92,7 +93,7 @@
 
     @for $i from 1 to 6 {
       .hidden:nth-child(#{$i}) {
-        margin-top: (12vh * $i) + $i;
+        margin-top: (14vh * $i) + 2vh;
         height: 10vh;
         left: 77.5%;
         width: 15%;
