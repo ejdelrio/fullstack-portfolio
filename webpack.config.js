@@ -16,12 +16,13 @@ let plugins = [
   new DefinePlugin({
     __DEBUG__: JSON.stringify(!production),
     __API_URL__: JSON.stringify(process.env.API_URL),
+    __GOOGLE_SECRET__: '',
     __GOOGLE_CLIENT_ID__: JSON.stringify(process.env.GOOGLE_CLIENT_ID)
 
   })
 ];
 
-if(production) {
+if (production) {
   plugins = [...plugins, new CleanPlugin, new UglifyPlugin];
 }
 
