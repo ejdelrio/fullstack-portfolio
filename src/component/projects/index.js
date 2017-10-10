@@ -11,7 +11,7 @@ class Projects extends React.Component {
       react: 'hidden',
       mongo: 'hidden',
       aws: 'hidden',
-      animationOne: 'hidden',
+      animation: 'hidden',
       animationTwo: 'hidden'
     }
     this.unHide = this.unHide.bind(this);
@@ -57,6 +57,13 @@ class Projects extends React.Component {
           >
             <p>AWS</p>
             {snippets.aws}
+          </div>
+          <div
+            className={this.state.animation}
+            onClick={() => this.unHide('animation')}
+          >
+            <p>Animation</p>
+            {snippets.animation}
           </div>
 
         </section>

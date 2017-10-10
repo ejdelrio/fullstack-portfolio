@@ -240,3 +240,8 @@ snips.aws = (
     </code></pre>
   </div>
 )
+
+snips.animation = (
+  <iframe scrolling='no' title='gGzabL' src='//codepen.io/ejdelrio/embed/gGzabL/?height=403&theme-id=0&default-tab=result&embed-version=2' frameBorder='no' allowTransparency='true' allowFullScreen='true' >
+  </iframe>
+)
