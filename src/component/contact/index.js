@@ -59,14 +59,20 @@ class Contact extends React.Component {
 
   compileMessage() {
     let {name, subject, body, sender} = this.state;
-    let to = 'edwinjdelrio@gmail.com';
+    let message = `
+    From: ${name} <${sender}>\n
+    To: Edwin DelRio <edwinjdelrio@gmail.com>\n
+    Subject: ${subject}\n\n
+    ${body}
+    `
+    return btoa(message);
   }
 
   sendMessage(e) {
     e.preventDefault();
     this.errorCheck()
     .then(() => {
-      let data = this.compileMessage;
+      let data = {raw: this.compileMessage()};
       return this.gmailCall(data);
     })
     .catch(error => {
@@ -81,6 +87,7 @@ class Contact extends React.Component {
 
   gmailCall(data) {
     if(!data) return;
+    console.log(data);
     return superagent.post('https://www.googleapis.com/gmail/v1/users/me/messages/send?uploadType=multipart')
     .set('Authorization', `Bearer ${__GOOGLE_CLIENT_ID__}`)
     .send({data})
