@@ -17,11 +17,15 @@ class Contact extends React.Component {
       senderError: '',
       bodyError: '',
       subjectError: '',
-      error: false,
+      req: false,
+      errorMessage: '',
+      errorColor: 'red'
     }
     this.onChange = this.onChange.bind(this);
     this.errorCheck = this.errorCheck.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
+    this.compileMessage = this.compileMessage.bind(this);
+
   }
 
   onChange(e) {
@@ -29,38 +33,65 @@ class Contact extends React.Component {
     this.setState({[name]: value});
   }
   errorCheck() {
-    let [{name, subject, body, sender}] = [this.state];
+    let {name, subject, body, sender} = this.state;
     var nameError, subjectError, bodyError, senderError, error;
-    nameError = name === '' ? 'inputError' : '';
-    bodyError = body === '' ? 'inputError' : '';
-    subjectError = subject === '' ? 'inputError' : '';
-    senderError = sender === '' ? 'inputError' : '';
+    var errorMessage = 'Please Complete All Forms!!';
 
-    error = !nameError || !bodyError || !subjectError || !senderError ?
-    false: true;
-    this.setState({
-      nameError,
-      bodyError,
-      subjectError,
-      senderError,
-      error
-    });
+    return new Promise((resolve, reject) => {
+      nameError = name === '' ? 'inputError' : '';
+      bodyError = body === '' ? 'inputError' : '';
+      subjectError = subject === '' ? 'inputError' : '';
+      senderError = sender === '' ? 'inputError' : '';
+
+      if(nameError || bodyError || subjectError || senderError) {
+        reject({
+          nameError,
+          bodyError,
+          subjectError,
+          senderError,
+          error: true,
+          errorMessage
+        });
+      }
+      resolve();
+    })
   }
-  compileMessage() {
 
+  compileMessage() {
+    let {name, subject, body, sender} = this.state;
+    let to = 'edwinjdelrio@gmail.com';
   }
 
   sendMessage(e) {
     e.preventDefault();
-    let to = 'edwinjdelrio@gmail.com';
+    this.errorCheck()
+    .then(() => {
+      let data = this.compileMessage;
+      return this.gmailCall(data);
+    })
+    .catch(error => {
+      if(!error.status) return this.setState(error);
+      this.setState({
+        error: true,
+        errorMessage: 'Whoops! Somethingwent wrong. Please try your request again.'
+      })
 
-    this.errorCheck();
-    if(this.state.error) return undefined;
-
-    let data = this.compileMessage();
-
-
+    })
   }
+
+  gmailCall(data) {
+    if(!data) return;
+    return superagent.post('https://www.googleapis.com/gmail/v1/users/me/messages/send?uploadType=multipart')
+    .set('Authorization', `Bearer ${__GOOGLE_CLIENT_ID__}`)
+    .send({data})
+    .then(res => {
+      console.log(res.body);
+    })
+  }
+
+
+
+
   render() {
     return(
       <section id='contact' className={this.props.className}>
@@ -101,7 +132,11 @@ class Contact extends React.Component {
           <button type='submit'>Send Message</button>
         </form>
         {util.renderIf(this.state.error,
-          <p>Please Fill Out All Fields!!</p>
+          <p
+            style={{color: this.state.errorColor}}
+          >
+            {this.state.errorMessage}
+          </p>
         )}
       </section>
     )

@@ -16,7 +16,7 @@ let plugins = [
   new DefinePlugin({
     __DEBUG__: JSON.stringify(!production),
     __API_URL__: JSON.stringify(process.env.API_URL),
-    __GOOGLE_SECRET__: '',
+    __GOOGLE_SECRET__: JSON.stringify(process.env.CLIENT_SECRET),
     __GOOGLE_CLIENT_ID__: JSON.stringify(process.env.GOOGLE_CLIENT_ID)
 
   })

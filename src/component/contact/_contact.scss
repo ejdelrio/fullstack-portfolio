@@ -11,9 +11,10 @@
   transition: 350ms ease-out;
   &>p {
     float: left;
-    color: red;
-    margin: 4vh 5%;
-    font-size: 3vh;
+    margin: 4vh 2.5%;
+    font-size: 2.5vh;
+    width: 90%;
+    height: 6vh;
     font-family: $font;
     animation-name: ptagfade;
     animation-duration: 1s;
