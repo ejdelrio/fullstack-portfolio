@@ -67,6 +67,7 @@ class Contact extends React.Component {
       if(!error.status) return this.setState(error);
       this.setState({
         error: true,
+        errorColor: 'red',
         errorMessage: 'Whoops! Somethingwent wrong. Please try your request again.'
       })
 
