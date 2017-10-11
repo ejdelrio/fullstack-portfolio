@@ -76,11 +76,13 @@ class Contact extends React.Component {
   mailCall(data) {
     if(!data) return;
     data.secret = APP_SECRET;
-    console.log(data);
     return superagent.post(`${__API_URL__}/eddiesportfolioapiwithcrappyauthentication`)
     .send(data)
     .then(res => {
-      console.log(res);
+      this.setState({
+        errorColor: 'green',
+        errorMessage: 'Your message has been sent :D'
+      })
     })
 
   }
