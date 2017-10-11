@@ -66,6 +66,14 @@ class Contact extends React.Component {
     .catch(error => {
       if(!error.status) return this.setState(error);
       this.setState({
+        sender: '',
+        body: '',
+        name: '',
+        subject: '',
+        nameError: '',
+        subjectError: '',
+        senderError: '',
+        bodyError: '',
         error: true,
         errorMessage: 'Whoops! Somethingwent wrong. Please try your request again.'
       })
