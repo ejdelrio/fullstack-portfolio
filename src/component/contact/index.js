@@ -2,6 +2,7 @@ import './_contact.scss';
 import React from 'react';
 import superagent from 'superagent';
 
+
 import * as util from '../../lib/util.js';
 
 class Contact extends React.Component {
@@ -24,7 +25,6 @@ class Contact extends React.Component {
     this.onChange = this.onChange.bind(this);
     this.errorCheck = this.errorCheck.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
-    this.compileMessage = this.compileMessage.bind(this);
 
   }
 
@@ -38,10 +38,10 @@ class Contact extends React.Component {
     var errorMessage = 'Please Complete All Forms!!';
 
     return new Promise((resolve, reject) => {
-      nameError = name === '' ? 'inputError' : '';
-      bodyError = body === '' ? 'inputError' : '';
-      subjectError = subject === '' ? 'inputError' : '';
-      senderError = sender === '' ? 'inputError' : '';
+      nameError = !name ? 'inputError' : '';
+      bodyError = !body ? 'inputError' : '';
+      subjectError = !subject ? 'inputError' : '';
+      senderError = !sender ? 'inputError' : '';
 
       if(nameError || bodyError || subjectError || senderError) {
         reject({
@@ -57,23 +57,11 @@ class Contact extends React.Component {
     })
   }
 
-  compileMessage() {
-    let {name, subject, body, sender} = this.state;
-    let message = `
-    From: ${name} <${sender}>\n
-    To: Edwin DelRio <edwinjdelrio@gmail.com>\n
-    Subject: ${subject}\n\n
-    ${body}
-    `
-    return btoa(message);
-  }
-
   sendMessage(e) {
     e.preventDefault();
     this.errorCheck()
     .then(() => {
-      let data = {raw: this.compileMessage()};
-      return this.gmailCall(data);
+      return this.mailCall(this.state);
     })
     .catch(error => {
       if(!error.status) return this.setState(error);
@@ -85,15 +73,16 @@ class Contact extends React.Component {
     })
   }
 
-  gmailCall(data) {
+  mailCall(data) {
     if(!data) return;
+    data.secret = APP_SECRET;
     console.log(data);
-    return superagent.post('https://www.googleapis.com/gmail/v1/users/me/messages/send?uploadType=multipart')
-    .set('Authorization', `Bearer ${__GOOGLE_CLIENT_ID__}`)
-    .send({data})
+    return superagent.post(`${__API_URL__}/eddiesportfolioapiwithcrappyauthentication`)
+    .send(data)
     .then(res => {
-      console.log(res.body);
+      console.log(res);
     })
+
   }
 
 
