@@ -50,7 +50,8 @@ class Contact extends React.Component {
           subjectError,
           senderError,
           error: true,
-          errorMessage
+          errorMessage,
+          errorColor: 'red'
         });
       }
       resolve();
