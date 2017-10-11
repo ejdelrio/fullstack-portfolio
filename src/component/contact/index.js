@@ -132,7 +132,7 @@ class Contact extends React.Component {
             type='text'
             className={this.state.bodyError}
             placeholder='Write Message Here'
-            value={this.body}
+            value={this.state.body}
             onChange={this.onChange}
           ></textarea>
           <button type='submit'>Send Message</button>
