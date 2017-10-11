@@ -17,7 +17,7 @@ let plugins = [
     __DEBUG__: JSON.stringify(!production),
     __API_URL__: JSON.stringify(process.env.API_URL),
     APP_SECRET: JSON.stringify(process.env.APP_SECRET),
-    ENDPOINT: JSON.stringify(process.env.APP_SECRET)
+    ENDPOINT: JSON.stringify(process.env.ENDPOINT)
 
   })
 ];

@@ -66,14 +66,6 @@ class Contact extends React.Component {
     .catch(error => {
       if(!error.status) return this.setState(error);
       this.setState({
-        sender: '',
-        body: '',
-        name: '',
-        subject: '',
-        nameError: '',
-        subjectError: '',
-        senderError: '',
-        bodyError: '',
         error: true,
         errorMessage: 'Whoops! Somethingwent wrong. Please try your request again.'
       })
@@ -89,7 +81,15 @@ class Contact extends React.Component {
     .then(res => {
       this.setState({
         errorColor: 'green',
-        errorMessage: 'Your message has been sent :D'
+        errorMessage: 'Your message has been sent :D',
+        sender: '',
+        body: '',
+        name: '',
+        subject: '',
+        nameError: '',
+        subjectError: '',
+        senderError: '',
+        bodyError: '',
       })
     })
 
