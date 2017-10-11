@@ -83,6 +83,7 @@ class Contact extends React.Component {
       this.setState({
         errorColor: 'green',
         errorMessage: 'Your message has been sent :D',
+        error: true,
         sender: '',
         body: '',
         name: '',
