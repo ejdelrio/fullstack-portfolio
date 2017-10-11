@@ -109,7 +109,7 @@ class Contact extends React.Component {
             type='text'
             className={this.state.nameError}
             name='name'
-            placeholder='Pleas Enter Your Name.'
+            placeholder='Please Enter Your Name.'
             value={this.state.name}
             onChange={this.onChange}
           />
