@@ -84,7 +84,7 @@ class Contact extends React.Component {
   mailCall(data) {
     if(!data) return;
     data.secret = APP_SECRET;
-    return superagent.post(`${__API_URL__}/eddiesportfolioapiwithcrappyauthentication`)
+    return superagent.post(`${__API_URL__}/${ENDPOINT}`)
     .send(data)
     .then(res => {
       this.setState({
